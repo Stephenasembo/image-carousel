@@ -5,6 +5,7 @@ const previousImage = document.querySelector('#previous');
 let currentImage = 0;
 let imagesArray = slidesFrame.querySelectorAll('img');
 imagesArray = Array.from(imagesArray);
+const imagesNumber = imagesArray.length;
 
 function displayCurrentImage() {
   const imageSrc = imagesArray[currentImage].src;
@@ -21,12 +22,18 @@ function renderInitialImage() {
 window.addEventListener('load', renderInitialImage);
 
 function renderNextImage() {
+  if (currentImage === imagesNumber - 1) {
+    return;
+  }
   currentImage += 1;
   displayCurrentImage();
 }
 nextImage.addEventListener('click', renderNextImage);
 
 function renderPreviousImage() {
+  if (currentImage === 0) {
+    return;
+  }
   currentImage -= 1;
   displayCurrentImage();
 }
