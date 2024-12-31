@@ -22,3 +22,8 @@
 .location{
   background-color: green;
 }
+#imgFrame > button {
+  height: 100px;
+  align-self: center;
+  margin: 10px;
+}

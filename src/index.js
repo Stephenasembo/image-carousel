@@ -53,7 +53,7 @@ window.addEventListener('load', renderInitialImage);
 
 function renderNextImage() {
   if (currentImage === imagesNumber - 1) {
-    return;
+    currentImage = -1;
   }
   currentImage += 1;
   displayCurrentImage();
@@ -62,9 +62,15 @@ nextImage.addEventListener('click', renderNextImage);
 
 function renderPreviousImage() {
   if (currentImage === 0) {
-    return;
+    currentImage = imagesNumber;
   }
   currentImage -= 1;
   displayCurrentImage();
 }
 previousImage.addEventListener('click', renderPreviousImage);
+
+function slideShow() {
+  renderNextImage();
+}
+
+window.setInterval(slideShow, 5000);
