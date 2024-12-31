@@ -1,6 +1,7 @@
 const slidesFrame = document.querySelector('#slidesFrame');
 const nextImage = document.querySelector('#next');
 const previousImage = document.querySelector('#previous');
+const imageNavigation = document.querySelector('#imageNavigation');
 
 let currentImage = 0;
 let imagesArray = slidesFrame.querySelectorAll('img');
@@ -38,3 +39,10 @@ function renderPreviousImage() {
   displayCurrentImage();
 }
 previousImage.addEventListener('click', renderPreviousImage);
+
+(function displayNavigation() {
+  imagesArray.forEach(() => {
+    const imageBtn = document.createElement('button');
+    imageNavigation.appendChild(imageBtn);
+  });
+}());

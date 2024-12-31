@@ -10,3 +10,12 @@
 #slidesFrame {
   text-align: center;
 }
+#imageNavigation > button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 3px;
+}
+#imageNavigation {
+  text-align: center;
+}
