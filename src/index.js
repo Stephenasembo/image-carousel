@@ -5,31 +5,29 @@ const previousImage = document.querySelector('#previous');
 let currentImage = 0;
 let imagesArray = slidesFrame.querySelectorAll('img');
 imagesArray = Array.from(imagesArray);
-function renderInitialImage() {
+
+function displayCurrentImage() {
   const imageSrc = imagesArray[currentImage].src;
   const imageAlt = imagesArray[currentImage].alt;
   const imageWidth = imagesArray[currentImage].width;
   const imageHeight = imagesArray[currentImage].height;
   slidesFrame.innerHTML = `<img src = ${imageSrc} alt = ${imageAlt} width = ${imageWidth} height = ${imageHeight}>`;
+}
+
+function renderInitialImage() {
+  currentImage = 0;
+  displayCurrentImage();
 }
 window.addEventListener('load', renderInitialImage);
 
 function renderNextImage() {
   currentImage += 1;
-  const imageSrc = imagesArray[currentImage].src;
-  const imageAlt = imagesArray[currentImage].alt;
-  const imageWidth = imagesArray[currentImage].width;
-  const imageHeight = imagesArray[currentImage].height;
-  slidesFrame.innerHTML = `<img src = ${imageSrc} alt = ${imageAlt} width = ${imageWidth} height = ${imageHeight}>`;
+  displayCurrentImage();
 }
 nextImage.addEventListener('click', renderNextImage);
 
 function renderPreviousImage() {
   currentImage -= 1;
-  const imageSrc = imagesArray[currentImage].src;
-  const imageAlt = imagesArray[currentImage].alt;
-  const imageWidth = imagesArray[currentImage].width;
-  const imageHeight = imagesArray[currentImage].height;
-  slidesFrame.innerHTML = `<img src = ${imageSrc} alt = ${imageAlt} width = ${imageWidth} height = ${imageHeight}>`;
+  displayCurrentImage();
 }
 previousImage.addEventListener('click', renderPreviousImage);
