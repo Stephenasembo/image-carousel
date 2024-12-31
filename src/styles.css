@@ -1,3 +1,6 @@
 #imgFrame {
   border: 1px solid blue;
 }
+#slidesFrame {
+  text-align: center;
+}
