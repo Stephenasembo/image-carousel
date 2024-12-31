@@ -1,5 +1,11 @@
-#imgFrame {
+#container {
   border: 1px solid blue;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+}
+#imgFrame {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
 }
 #slidesFrame {
   text-align: center;
