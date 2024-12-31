@@ -40,9 +40,21 @@ function renderPreviousImage() {
 }
 previousImage.addEventListener('click', renderPreviousImage);
 
+function navigateImages() {
+  let navigationButtons = imageNavigation.querySelectorAll('button');
+  navigationButtons = Array.from(navigationButtons);
+  navigationButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      currentImage = index;
+      displayCurrentImage();
+    });
+  });
+}
+
 (function displayNavigation() {
   imagesArray.forEach(() => {
     const imageBtn = document.createElement('button');
     imageNavigation.appendChild(imageBtn);
   });
+  navigateImages();
 }());
